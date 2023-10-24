@@ -9,6 +9,9 @@ jobs:
     name: ${{ matrix.session }} ${{ matrix.python }} / ${{ matrix.django }}
     runs-on: ubuntu-latest
 
+    container:
+      image: mcr.microsoft.com/playwright/python:v1.39.0-jammy
+
     strategy:
       fail-fast: false
       matrix:
@@ -36,7 +39,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Python ${{ matrix.python }}
-        uses: actions/setup-python@v4.7.1
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python }}
 
@@ -74,14 +77,11 @@ jobs:
       - name: Install django
         run: |
           python -m pip install 'Django~=${{ matrix.django }}.0'
-
-      - name: Install Playwright
-        if: matrix.session == 'tests'
-        run: |
-          pipx install --pip-args=--constraint=.github/workflows/constraints.txt playwright
-          playwright install --with-deps chromium
-          python -m playwright install --with-deps
-
+# 
+#       - name: Install Playwright
+#         if: matrix.session == 'tests'
+#         run: python -m playwright install --with-deps
+# 
       - name: Compute pre-commit cache key
         if: matrix.session == 'pre-commit'
         id: pre-commit-cache
@@ -132,7 +132,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4.7.1
+        uses: actions/setup-python@v4
         with:
           python-version: "3.11"
 
