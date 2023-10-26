@@ -169,7 +169,6 @@ def tests(session: Session, django: str) -> None:
         "coverage[toml]",
         "pytest",
         "pytest-django",
-        "pytest-docker",
         "pygments",
         "playwright",
         "pytest-playwright",
