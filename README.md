@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/pypi/l/cookiecutter-django-package-instance)][license]
 
 [![Read the documentation at https://cookiecutter-django-package-instance.readthedocs.io/](https://img.shields.io/readthedocs/cookiecutter-django-package-instance/latest.svg?label=Read%20the%20Docs)][read the docs]
-[![Tests](https://github.com/OmenApps/cookiecutter-django-package-instance/workflows/tests.yml/badge.svg)][tests]
+[![Tests](https://github.com/OmenApps/cookiecutter-django-package-instance/actions/workflows/tests.yml/badge.svg)][tests]
 [![Codecov](https://codecov.io/gh/OmenApps/cookiecutter-django-package-instance/branch/main/graph/badge.svg)][codecov]
 
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)][pre-commit]
